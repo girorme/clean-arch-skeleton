@@ -2,12 +2,8 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Entity;
+namespace App\Domain\Contact\Entity;
 
-use App\Domain\ValueObject\ContactId;
-use App\Domain\ValueObject\Nickname;
-use App\Domain\ValueObject\PersonName;
-use App\Domain\ValueObject\PhoneNumber;
 use JsonSerializable;
 
 /**
@@ -21,52 +17,48 @@ class Contact implements JsonSerializable
     /**
      * @OA\Property(type="integer", format="int32")
      */
-    private ContactId $id;
+    private int $id;
 
     /**
      * @OA\Property(type="string")
      */
-    private PersonName $name;
+    private string $name;
 
     /**
      * @OA\Property(type="string")
      */
-    private Nickname $nickname;
+    private string $nickname;
 
     /**
      * @OA\Property(type="string")
      */
-    private PhoneNumber $phone;
+    private int $phone;
 
     public function __construct(
-        ContactId $id,
-        PersonName $name,
-        Nickname $nickname,
-        PhoneNumber $phone
+        int $id,
+        string $name,
+        string $nickname,
+        int $phone
     )
     {
-        $this->id = $id;
-        $this->name = $name;
-        $this->nickname = $nickname;
-        $this->phone = $phone;
     }
 
-    public function getId(): ContactId
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getName(): PersonName
+    public function getName(): string
     {
         return $this->name;
     }
 
-    public function getNickname(): Nickname
+    public function getNickname(): string
     {
         return $this->nickname;
     }
 
-    public function getPhone(): PhoneNumber
+    public function getPhone(): int
     {
         return $this->phone;
     }
