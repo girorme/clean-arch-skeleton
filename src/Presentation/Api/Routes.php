@@ -90,7 +90,7 @@ return static function (App $app) {
             Request $request,
             Response $response
         ): Response {
-            return (new GetContactsController($response))->action();
+            // foo
         });
 
         /**
@@ -108,7 +108,7 @@ return static function (App $app) {
             Request $request,
             Response $response
         ): Response {
-            return (new AddContactController($request, $response))->action();
+            // bar
         });
 
         /**
@@ -137,7 +137,7 @@ return static function (App $app) {
             Response $response,
             array $args
         ): Response {
-            return (new GetContactController($response, $args))->action();
+            // foo
         });
 
         /**
@@ -166,11 +166,7 @@ return static function (App $app) {
             Response $response,
             array $args
         ): Response {
-            return (new UpdateContactController(
-                $request,
-                $response,
-                $args
-            ))->action();
+            // 'foo';
         });
 
         /**
@@ -198,7 +194,7 @@ return static function (App $app) {
             Response $response,
             array $args
         ): Response {
-            return (new RemoveContactController($response, $args))->action();
+            // 'bar';
         });
     });
 
